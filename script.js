@@ -1,5 +1,3 @@
-document.querySelector("link[rel='icon']").href = "https://sfwx.github.io/mcstructure/index.png";
-
 function generateJson() {
   if (typeof itemJson !== "object") {
     alert("Não foi possível carregar itemJson.js");
