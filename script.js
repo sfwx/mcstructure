@@ -1,3 +1,7 @@
+/*         FwX: EDITOR-NBT          */
+/* Todos os direitos são reservados */
+/* https://sfwx.github.io/copyright */
+
 function generateJson() {
   if (typeof itemJson !== "object") {
     alert("Não foi possível carregar itemJson.js");
@@ -61,3 +65,6 @@ if (!item.Item.value.tag.value.ench.value.value.length) {
   a.click();
   URL.revokeObjectURL(url);
 }
+
+/* Todos os direitos são reservados */
+/* https://sfwx.github.io/copyright */
