@@ -6,7 +6,7 @@ document.querySelector("[rel='icon']").href = "https://sfwx.github.io/image/icon
 
 function generateJson() {
   if (typeof itemJson !== "object") {
-    alert("Não foi possível carregar itemJson.js");
+    alert("Não foi possível carregar item.js");
     return;
   }
   const json = structuredClone(itemJson);
@@ -61,14 +61,17 @@ if (!item.Item.value.tag.value.ench.value.value.length) {
   else {
     delete item.CustomName;
   }
+  return json;
+}
+function downloadItem() {
   const blob = new Blob(
-    [JSON.stringify(json, null, 2)],
+    [JSON.stringify(generateJson(), null, 2)],
     { type: "application/json" }
   );
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = document.getElementById("itemId").value.replace("minecraft:", "") + ".json";
+  a.download = document.getElementById("itemId").value.split(":")[1] + ".json";
   a.click();
   URL.revokeObjectURL(url);
 }
