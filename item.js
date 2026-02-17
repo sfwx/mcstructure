@@ -61,10 +61,6 @@ const itemJson = {
                       "type": "string",
                       "value": "minecraft:ITEM"
                     },
-                    /*"WasPickedUp": {
-                      "type": "byte",
-                      "value": 0
-                    },*/
                     "tag": {
                       "type": "compound",
                       "value": {
@@ -112,25 +108,6 @@ const itemJson = {
                     }
                   }
                 },
-                /*"LootDropped": {
-                  "type": "byte",
-                  "value": 0
-                },
-                "Motion": {
-                  "type": "list",
-                  "value": {
-                    "type": "float",
-                    "value": [
-                      0,
-                      0,
-                      0
-                    ]
-                  }
-                },
-                "OnGround": {
-                  "type": "byte",
-                  "value": 1
-                },*/
                 "Pos": {
                   "type": "list",
                   "value": {
@@ -142,16 +119,6 @@ const itemJson = {
                     ]
                   }
                 },
-                /*"Rotation": {
-                  "type": "list",
-                  "value": {
-                    "type": "float",
-                    "value": [
-                      0,
-                      0
-                    ]
-                  }
-                },*/
                 "Tags": {
                   "type": "list",
                   "value": {
