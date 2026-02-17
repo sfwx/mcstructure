@@ -53,7 +53,7 @@ if (!item.Item.value.tag.value.ench.value.value.length) {
     item.Tags.value.value = document.getElementById("tags").value.trim().split(", ");
   }
   else {
-    delete item.tags;
+    delete item.Tags;
   }
   if (document.getElementById("customName").value.trim()) {
     item.CustomName.value = document.getElementById("customName").value;
