@@ -74,7 +74,7 @@
       <button data-fwx onclick="downloadItem();">
         Save Item
       </button>
-      <button data-fwx onclick="window.clipboard.href = generateJson();">
+      <button data-fwx onclick="navigator.clipboard.writeText(generateJson());">
         Copy Item Json
       </button>
     </main>
