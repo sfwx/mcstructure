@@ -49,7 +49,14 @@ if (!item.Item.value.tag.value.ench.value.value.length) {
   if (!item.Item.value.tag.value.display && !item.Item.value.tag.value.ench && !item.Item.value.tag.value.Unbreakable) {
     delete item.Item.value.tag;
   }
-  item.Tags.value.value = [ document.getElementById("tag").value ];
+
+  if (document.getElementById("tag").value.trim()) {
+    item.Tags.value.value = document.getElementById("tag").value.trim().split(", ");
+  }
+  else {
+    delete item.tags;
+  }
+
   if (document.getElementById("customName").value.trim()) {
     item.CustomName.value = document.getElementById("customName").value;
   }
