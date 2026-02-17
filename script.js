@@ -20,7 +20,7 @@ function generateJson() {
     delete item.Item.value.tag.value.display.value.Name;
   }
   if (document.getElementById("lore").value.trim()) {
-    item.Item.value.tag.value.display.value.Lore.value.value = [ document.getElementById("lore").value ];
+    item.Item.value.tag.value.display.value.Lore.value.value = document.getElementById("lore").value.trim().split("\n");
   }
   else {
     delete item.Item.value.tag.value.display.value.Lore;
