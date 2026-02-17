@@ -71,8 +71,11 @@
         Custom Name <span data-fwx style="opacity: 0.5;">(Item entity Name)</span>
       </div>
       <input data-fwx id="customName" name="customName" placeholder="Diamante" value="Diamante">
-      <button data-fwx onclick="generateJson();">
+      <button data-fwx onclick="downloadItem();">
         Save Item
+      </button>
+      <button data-fwx onclick="window.clipboard.href = generateJson();">
+        Copy Item Json
       </button>
     </main>
     <a data-fwx class="copyright" href="https://sfwx.github.io/copyright?type=Minecraft">
