@@ -2,6 +2,8 @@
 /* Todos os direitos são reservados */
 /* https://sfwx.github.io/copyright */
 
+document.querySelector("[rel='icon']").href = "https://sfwx.github.io/image/icon/mcstructure.png";
+
 function generateJson() {
   if (typeof itemJson !== "object") {
     alert("Não foi possível carregar itemJson.js");
