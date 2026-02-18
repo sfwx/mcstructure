@@ -65,7 +65,7 @@ if (!item.Item.value.tag.value.ench.value.value.length) {
 }
 function downloadItem() {
   const blob = new Blob(
-    [JSON.stringify(generateJson(), null, 2)],
+    [JSON.stringify(generateJson())],
     { type: "application/json" }
   );
   const url = URL.createObjectURL(blob);
