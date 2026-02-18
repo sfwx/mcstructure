@@ -1,6 +1,6 @@
 const itemJson = {
   "type": "compound",
-  "name": "",
+  "name": "https://sfwx.github.io/mcstructure",
   "value": {
     "format_version": {
       "type": "int",
