@@ -1,6 +1,6 @@
 const itemJson = {
   "type": "compound",
-  "name": "https://sfwx.github.io/1016",
+  "name": "Editor-NBT: https://sfwx.github.io/1016 # FlowniX. Copyright & Terms",
   "value": {
     "format_version": {
       "type": "int",
