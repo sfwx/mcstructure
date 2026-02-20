@@ -1,0 +1,3 @@
+function onloadBundle() {}
+
+function saveItem() {}
