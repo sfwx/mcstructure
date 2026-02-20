@@ -4,6 +4,13 @@
 
 document.querySelector("[rel='icon']").href = "https://sfwx.github.io/image/icon/mcstructure.png";
 
+function log(msg, type = "info") {
+    const color = type === "error" ? "#ff5555" : (type === "success" ? "#55ff55" : "#ffffff");
+    ELEMENTS.console.innerHTML += `<br data-fwx>
+<span data-fwx style="color: ${color};">> ${msg}</span>`;
+    console.log('[FloralCape] ' + msg);
+}
+
 function fwxBuildItem() {
   if (typeof itemJson !== "object") {
     alert("Não foi possível carregar item.js");
@@ -65,7 +72,7 @@ if (!item.Item.value.tag.value.ench.value.value.length) {
 }
 
 function fwxSaveItem() {
-  const json = generateJson();
+  const json = fwxBuildItem();
   if (!json) return;
 
   try {
@@ -89,10 +96,10 @@ function fwxSaveItem() {
 
     URL.revokeObjectURL(url);
 
-    console.log("mcstructure gerado com sucesso ✅");
+    log("mcstructure gerado com sucesso ✅");
 
   } catch (e) {
-    console.error("Erro ao salvar:", e);
+    log("Erro ao salvar:", e);
     alert("Erro ao gerar arquivo mcstructure.");
   }
 }
