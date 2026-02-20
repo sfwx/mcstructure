@@ -65,7 +65,36 @@ if (!item.Item.value.tag.value.ench.value.value.length) {
 }
 
 function fwxSaveItem() {
-  alert(fwxBuildItem());
+  const json = generateJson();
+  if (!json) return;
+
+  try {
+    // 1️⃣ Converte JSON estruturado → NBT binário
+    const rawNBT = nbt.writeUncompressed(json);
+
+    // 2️⃣ Comprime em gzip (formato mcstructure Bedrock)
+    const compressed = pako.gzip(new Uint8Array(rawNBT));
+
+    // 3️⃣ Cria arquivo para download
+    const blob = new Blob([compressed], {
+      type: "application/octet-stream"
+    });
+
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+
+    a.href = url;
+    a.download = "item.mcstructure";
+    a.click();
+
+    URL.revokeObjectURL(url);
+
+    console.log("mcstructure gerado com sucesso ✅");
+
+  } catch (e) {
+    console.error("Erro ao salvar:", e);
+    alert("Erro ao gerar arquivo mcstructure.");
+  }
 }
 
 /* Todos os direitos são reservados */
