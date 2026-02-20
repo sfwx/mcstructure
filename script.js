@@ -2,14 +2,15 @@
 /* Todos os direitos são reservados */
 /* https://sfwx.github.io/copyright */
 
+
+document.querySelector("[rel='icon']").href = "https://sfwx.github.io/image/icon/mcstructure.png";
+
 function onloadBundle() {
   if (window.buffer) {
     window.Buffer = window.buffer.Buffer;
     document.getElementById("fwxButton").disabled = false;
   }
 }
-
-document.querySelector("[rel='icon']").href = "https://sfwx.github.io/image/icon/mcstructure.png";
 
 function generateJson() {
   if (typeof itemJson !== "object") {
