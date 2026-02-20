@@ -65,7 +65,7 @@ if (!item.Item.value.tag.value.ench.value.value.length) {
   }
   return json;
 }
-function downloadItem() {
+function DESABLEDdownloadItem() {
   const blob = new Blob(
     [JSON.stringify(generateJson())],
     { type: "application/json" }
@@ -76,6 +76,38 @@ function downloadItem() {
   a.download = document.getElementById("itemId").value.split(":")[1] + ".json";
   a.click();
   URL.revokeObjectURL(url);
+}
+
+async function downloadItem() {
+  const jsonData = generateJson();
+  if (!jsonData) return; // Caso o JSON de encantamentos seja inválido
+
+  try {
+    // 1. Converter o objeto JSON tipado para o buffer binário NBT
+    // O Minecraft Bedrock usa Little Endian (le), por isso usamos 'writeUncompressed'
+    // Se for para Java Edition, o padrão é Big Endian.
+    const nbtBuffer = await prismarineNbt.writeUncompressed(jsonData, 'little');
+
+    // 2. Criar o Blob binário
+    const blob = new Blob([nbtBuffer], { type: "application/octet-stream" });
+    
+    // 3. Definir a extensão (geralmente .mcstructure ou .nbt para Bedrock)
+    const fileName = (document.getElementById("itemId").value.split(":")[1] || "item") + ".mcstructure";
+
+    // 4. Processo de download
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = fileName;
+    a.click();
+    
+    // Limpar memória
+    URL.revokeObjectURL(url);
+    
+  } catch (error) {
+    console.error("Erro na conversão NBT:", error);
+    alert("Erro ao converter para binário. Verifique o console.");
+  }
 }
 
 /* Todos os direitos são reservados */
