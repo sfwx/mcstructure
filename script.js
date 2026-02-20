@@ -5,24 +5,6 @@
 
 document.querySelector("[rel='icon']").href = "https://sfwx.github.io/image/icon/mcstructure.png";
 
-function onloadBundle() {
-  // 1. Tenta encontrar o Buffer (o unpkg geralmente coloca em window.Buffer ou window.buffer)
-  window.Buffer = window.Buffer || (window.buffer ? window.buffer.Buffer : null);
-
-  // 2. Verifica se a biblioteca NBT foi carregada
-  // O bundle.run pode expor como 'nbt' ou 'prismarineNbt'
-  const nbtLib = window.nbt || window.prismarineNbt;
-
-  if (window.Buffer && nbtLib) {
-    console.log("FwX: Dependências carregadas com sucesso.");
-    document.getElementById("fwxButton").disabled = false;
-    document.getElementById("fwxButton").innerText = "Save .mcstructure";
-  } else {
-    // Se falhar, tentamos de novo em 500ms (re-check)
-    setTimeout(onloadBundle, 500);
-  }
-}
-
 function generateJson() {
   if (typeof itemJson !== "object") {
     alert("Não foi possível carregar item.js");
@@ -81,39 +63,6 @@ if (!item.Item.value.tag.value.ench.value.value.length) {
     delete item.CustomName;
   }
   return json;
-}
-
-async function downloadItem() {
-  const jsonData = generateJson();
-  if (!jsonData) return;
-
-  // Identifica qual variável global a lib usou
-  const nbtLib = window.nbt || window.prismarineNbt;
-
-  if (!nbtLib) {
-    alert("Biblioteca NBT não encontrada. Aguarde o carregamento.");
-    return;
-  }
-
-  try {
-    // O Minecraft Bedrock usa Little Endian para .mcstructure
-    const nbtBuffer = await nbtLib.writeUncompressed(jsonData, 'little');
-
-    const blob = new Blob([nbtBuffer], { type: "application/octet-stream" });
-    const fileName = (document.getElementById("itemId").value.split(":")[1] || "item") + ".mcstructure";
-
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = fileName;
-    a.click();
-    
-    URL.revokeObjectURL(url);
-    
-  } catch (error) {
-    console.error("Erro na conversão NBT:", error);
-    alert("Erro ao converter para binário. Verifique se o JSON de encantamentos está no formato correto.");
-  }
 }
 
 /* Todos os direitos são reservados */
