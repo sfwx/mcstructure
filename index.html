@@ -72,9 +72,6 @@
         Custom Name <span data-fwx style="opacity: 0.5;">(Item entity Name)</span>
       </div>
       <input data-fwx id="customName" name="customName" placeholder="Diamante" value="Diamante">
-      <button data-fwx id="fwxButton" onclick="downloadItem();" disabled>
-        Save Item
-      </button>
       <button data-fwx onclick="navigator.clipboard.writeText(JSON.stringify(generateJson()));">
         Copy Item Json
       </button>
@@ -143,8 +140,6 @@
       </table>
     </div>
     <script data-fwx type="text/javascript" src="https://sfwx.github.io/main.js" defer></script>
-    <script data-fwx type="text/javascript" src="https://unpkg.com/buffer@6.0.3/index.js"></script>
-    <script data-fwx type="text/javascript" src="https://bundle.run/prismarine-nbt@2.6.0" defer  onload="onloadBundle();"></script>
     <script data-fwx type="text/javascript" src="https://sfwx.github.io/mcstructure/item.js" defer></script>
     <script data-fwx type="text/javascript" src="https://sfwx.github.io/mcstructure/script.js" defer></script>
   </body>
