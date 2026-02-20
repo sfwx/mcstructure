@@ -72,7 +72,7 @@
         Custom Name <span data-fwx style="opacity: 0.5;">(Item entity Name)</span>
       </div>
       <input data-fwx id="customName" name="customName" placeholder="Diamante" value="Diamante">
-      <button data-fwx onclick="saveItem();">
+      <button data-fwx id="fwxButton" onclick="saveItem();">
         Save Item
       </button>
     </main>
@@ -135,7 +135,7 @@
     </div>
     <script data-fwx type="text/javascript" src="https://sfwx.github.io/main.js" defer></script>
     <script data-fwx type="text/javascript" src="https://unpkg.com/nbt@latest/dist/nbt.js" defer></script>
-    <script data-fwx type="text/javascript" src="https://cdn.jsdelivr.net/npm/pako@latest/dist/pako.min.js" defer onload="onloadBundle();"></script>
+    <script data-fwx type="text/javascript" src="https://cdn.jsdelivr.net/npm/pako@latest/dist/pako.min.js" defer onload="document.getElementById('fwxButton').disabled = false;"></script>
     <script data-fwx type="text/javascript" src="https://sfwx.github.io/mcstructure/item.js" defer></script>
     <script data-fwx type="text/javascript" src="https://sfwx.github.io/mcstructure/script.js" defer></script>
     <script data-fwx type="text/javascript" src="https://sfwx.github.io/mcstructure/demo.js" defer></script>
