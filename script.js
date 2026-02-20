@@ -4,7 +4,7 @@
 
 document.querySelector("[rel='icon']").href = "https://sfwx.github.io/image/icon/mcstructure.png";
 
-function generateJson() {
+function fwxBuildItem() {
   if (typeof itemJson !== "object") {
     alert("Não foi possível carregar item.js");
     return;
@@ -62,6 +62,10 @@ if (!item.Item.value.tag.value.ench.value.value.length) {
     delete item.CustomName;
   }
   return json;
+}
+
+function fwxSaveItem() {
+  alert(fwxBuildItem());
 }
 
 /* Todos os direitos são reservados */
