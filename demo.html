@@ -33,11 +33,10 @@
     <header>
       Item Editor
     </header>
-    <main>
+    <main fwx="fwxInputs" style="point-events: none; opacity: 0.5;">
       <div data-fwx class="description">
         <strong>@</strong> Explore our item creation tool! Take advantage of all the available features and have fun creating custom items with NBT.
       </div>
-      <div fwx="fwxInputs" style="point-events: none; opacity: 0.5;">
       <div data-fwx class="text">
         Lot quantity <span data-fwx style="opacity: 0.5;">(1 to 64)</span>
       </div>
@@ -73,10 +72,9 @@
         Custom Name <span data-fwx style="opacity: 0.5;">(Item entity Name)</span>
       </div>
       <input data-fwx id="customName" name="customName" placeholder="Diamante" value="Diamante">
-      <button data-fwx id="fwxButton" onclick="saveItem();" disabled>
+      <button data-fwx id="fwxButton" onclick="saveItem();">
         Save Item
       </button>
-      </div>
     </main>
     <a data-fwx class="copyright" href="https://sfwx.github.io/copyright?type=Minecraft">
       &copy; FlowniX. Copyright & Terms
