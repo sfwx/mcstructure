@@ -1,3 +1,0 @@
-function fwxSaveItem() {
-  alert("teste");
-}
