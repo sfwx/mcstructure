@@ -2,7 +2,12 @@
 /* Todos os direitos são reservados */
 /* https://sfwx.github.io/copyright */
 
-window.Buffer = window.buffer.Buffer;
+function onloadBundle() {
+  if (window.buffer) {
+    window.Buffer = window.buffer.Buffer;
+    document.getElementById("fwxButton").disabled = false;
+  }
+}
 
 document.querySelector("[rel='icon']").href = "https://sfwx.github.io/image/icon/mcstructure.png";
 
