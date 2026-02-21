@@ -1,4 +1,13 @@
-fwx.item = {};
+fwx.item = {
+  version: "1.3.0",
+  license: {
+    text: "",
+    url: "https://sfwx.github.io/copyright",
+    set = () => {
+      
+    }
+  }
+};
 fwx.item.template = {
   "type": "compound",
   "name": "Editor-NBT: https://sfwx.github.io/1016 © FlowniX. Copyright & Terms",
