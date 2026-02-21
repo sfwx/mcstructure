@@ -4,7 +4,7 @@
 
 document.querySelector("[rel='icon']").href = "https://sfwx.github.io/image/icon/mcstructure.png";
 
-fwx.buildItem = function () {
+fwx.item.build = function () {
   if (typeof this.item.template !== "object") {
     fwx.log("error", "Não foi possível carregar item.js", true);
     return;
