@@ -1,3 +1,4 @@
+fwx.item = {};
 fwx.item.template = {
   "type": "compound",
   "name": "Editor-NBT: https://sfwx.github.io/1016 © FlowniX. Copyright & Terms",
