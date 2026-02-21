@@ -9,7 +9,7 @@ fwx.item.build = function () {
     fwx.log("error", "Não foi possível carregar item.js", true);
     return;
   }
-  const fwx.item.json = structuredClone(this.item.template);
+  fwx.item.json = structuredClone(this.item.template);
   const item = fwx.item.json.value.structure.value.entities.value.value[0];
   item.Item.value.Count.value = Math.min(Math.max(Number(document.getElementById("fwxCount").value), 1), 64);
   item.Item.value.Name.value = document.getElementById("fwxItemId").value || "minecraft:diamond";
