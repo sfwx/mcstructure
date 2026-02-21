@@ -30,13 +30,13 @@ fwx.item.build = function () {
   }
   try {
     if (!document.getElementById("fwxEnch").value.trim()) {
-delete item.Item.value.tag.value.ench;
+      delete item.Item.value.tag.value.ench;
     }
     else {
-item.Item.value.tag.value.ench.value.value = JSON.parse(document.getElementById("fwxEnch").value);
-if (!item.Item.value.tag.value.ench.value.value.length) {
-  delete item.Item.value.tag.value.ench;
-}
+      item.Item.value.tag.value.ench.value.value = JSON.parse(document.getElementById("fwxEnch").value);
+      if (!item.Item.value.tag.value.ench.value.value.length) {
+        delete item.Item.value.tag.value.ench;
+      }
     }
   }
   catch {
