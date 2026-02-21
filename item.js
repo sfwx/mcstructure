@@ -3,8 +3,8 @@ fwx.item = {
   license: {
     text: "",
     url: "https://sfwx.github.io/copyright",
-    set = () => {
-      
+    set() {
+      alert("teste");
     }
   }
 };
