@@ -9,7 +9,6 @@ fwx.item.build = function () {
     fwx.log("error", "Não foi possível carregar item.js", true);
     return;
   }
-  else { fwx.log("success", "teste", true); }
   this.json = structuredClone(this.template);
   const item = this.json.value.structure.value.entities.value.value[0];
   item.Item.value.Count.value = Math.min(Math.max(Number(document.getElementById("fwxCount").value), 1), 64);
