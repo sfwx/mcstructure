@@ -5,11 +5,11 @@
 document.querySelector("[rel='icon']").href = "https://sfwx.github.io/image/icon/mcstructure.png";
 
 fwx.item.build = function () {
-  if (typeof this.item.template !== "object") {
+  if (typeof this.template !== "object") {
     fwx.log("error", "Não foi possível carregar item.js", true);
     return;
   }
-  fwx.item.json = structuredClone(this.item.template);
+  this.json = structuredClone(this.template);
   const item = fwx.item.json.value.structure.value.entities.value.value[0];
   item.Item.value.Count.value = Math.min(Math.max(Number(document.getElementById("fwxCount").value), 1), 64);
   item.Item.value.Name.value = document.getElementById("fwxItemId").value || "minecraft:diamond";
@@ -61,7 +61,7 @@ if (!item.Item.value.tag.value.ench.value.value.length) {
   else {
     delete item.CustomName;
   }
-  return fwx.item.json;
+  return this.json;
 }
 
 /* Todos os direitos são reservados */
