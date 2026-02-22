@@ -46,6 +46,10 @@ fwx.item.template = {
             ]
           }
         },
+        "palette": {
+          "type": "compound",
+          "value": {}
+        },
         "entities": {
           "type": "list",
           "value": {
@@ -146,26 +150,6 @@ fwx.item.template = {
                   "type": "string",
                   "value": "CUSTOMNAME"
                 }
-              }
-            ]
-          }
-        },
-        "palette": {
-          "type": "compound",
-          "value": {}
-        },
-        "block_indicies": {
-          "type": "list",
-          "value": {
-            "type": "list",
-            "value": [
-              {
-                "type": "end",
-                "value": []
-              },
-              {
-                "type": "end",
-                "value": []
               }
             ]
           }
