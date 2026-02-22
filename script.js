@@ -12,6 +12,7 @@ fwx.item.build = function () {
   this.json = structuredClone(this.template);
   const item = this.json.value.structure.value.entities.value.value[0];
   item.Item.value.Count.value = Math.min(Math.max(Number(document.getElementById("fwxCount").value), 1), 64);
+  item.Item.value.Damage.value = Math.max(Number(document.getElementById("fwxDamage").value), 0);
   item.Item.value.Name.value = document.getElementById("fwxItemId").value || "minecraft:diamond";
   if (document.getElementById("fwxDisplayName").value.trim()) {
     item.Item.value.tag.value.display.value.Name.value = document.getElementById("fwxDisplayName").value;
