@@ -82,7 +82,7 @@ fwx.item.submit = function () {
   if (fwx.item.submit !== undefined) {
     fwx.log("info", "Solicitando clipboard do navegador..");
     navigator.clipboard.writeText(JSON.stringify(fwx.item.submit));
-    fwx.log("info", "--------------------------------------------------------------");    
+    fwx.log("info", "---------------------------------------------------------------");    
   }
 }
 
