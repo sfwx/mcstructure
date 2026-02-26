@@ -78,10 +78,10 @@ fwx.item.build = function () {
   return this.json;
 }
 fwx.item.submit = function () {
-  fwx.item.submit = fwx.item.build();
-  if (fwx.item.submit !== undefined) {
+  fwx.item.result = fwx.item.build();
+  if (fwx.item.result !== undefined) {
     fwx.log("info", "Solicitando clipboard do navegador..");
-    navigator.clipboard.writeText(JSON.stringify(fwx.item.submit));
+    navigator.clipboard.writeText(JSON.stringify(fwx.item.result));
     fwx.log("info", "---------------------------------------------------------------");    
   }
 }
