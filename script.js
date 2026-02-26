@@ -4,7 +4,7 @@
 
 document.querySelector("[rel='icon']").href = "https://sfwx.github.io/image/icon/mcstructure.png";
 
-fwx.log("info", "Aguardando arquivo...");
+fwx.log("info", "Pronto pra execução..");
 
 fwx.item.build = function () {
   if (typeof this.template !== "object") {
