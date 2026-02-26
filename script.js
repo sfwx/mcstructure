@@ -4,7 +4,7 @@
 
 document.querySelector("[rel='icon']").href = "https://sfwx.github.io/image/icon/mcstructure.png";
 
-fwx.log("info", "Pronto pra execução..");
+fwx.log("info", "Pronto pra execução.");
 
 fwx.item.build = function () {
   if (typeof this.template !== "object") {
@@ -14,7 +14,7 @@ fwx.item.build = function () {
   fwx.log("info", "Clonando estrutura JSON do item..");
   this.json = structuredClone(this.template);
   const item = this.json.value.structure.value.entities.value.value[0];
-  fwx.log("info", "Gerando nova estrutura JSON atualizada..");
+  fwx.log("info", "Atualizando informações da estrutura..");
   item.Item.value.Count.value = Math.min(Math.max(Number(document.getElementById("fwxCount").value), 1), 64);
   item.Item.value.Damage.value = Math.max(Number(document.getElementById("fwxDamage").value), 0);
   item.Item.value.Name.value = document.getElementById("fwxItemId").value || "minecraft:diamond";
@@ -50,7 +50,7 @@ fwx.item.build = function () {
     }
   }
   catch {
-    fwx.log("warn", "Json de encantamentos inválido.", true);
+    fwx.log("warn", "O seu JSON de encantamentos esta inválido.", true);
     return;
   }
   if (!Number(document.getElementById("fwxUnbreakable").value)) {
@@ -80,8 +80,10 @@ fwx.item.submit = function () {
   fwx.item.submit = fwx.item.build();
   if (fwx.item.submit !== undefined) {
     fwx.log("info", "Solicitando clipboard do navegador..");
-    navigator.clipboard.writeText(JSON.stringify(fwx.item.submit));
-    fwx.log("info", "--------------------------");    
+    if () {
+      navigator.clipboard.writeText(JSON.stringify(fwx.item.submit));
+    }
+    fwx.log("info", "------------------------------------------------------------------");    
   }
 }
 
