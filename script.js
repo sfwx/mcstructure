@@ -11,7 +11,7 @@ fwx.item.build = function () {
     fwx.log("error", "Não foi possível carregar item.js", true);
     return;
   }
-  fwx.log("info", "Clonando estrutura JSON do item..");
+  fwx.log("info", "Clonando estrutura JSON do Item..");
   this.json = structuredClone(this.template);
   const item = this.json.value.structure.value.entities.value.value[0];
   fwx.log("info", "Atualizando informações da estrutura..");
