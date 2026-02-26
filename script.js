@@ -4,7 +4,7 @@
 
 document.querySelector("[rel='icon']").href = "https://sfwx.github.io/image/icon/mcstructure.png";
 
-fwx.log("info", "Pronto pra execução.");
+fwx.log("info", "Pronto para execução.");
 
 fwx.item.build = function () {
   if (typeof this.template !== "object") {
@@ -82,7 +82,7 @@ fwx.item.submit = function () {
   if (fwx.item.submit !== undefined) {
     fwx.log("info", "Solicitando clipboard do navegador..");
     navigator.clipboard.writeText(JSON.stringify(fwx.item.submit));
-    fwx.log("info", "------------------------------------------------------------------");    
+    fwx.log("info", "--------------------------------------------------------------");    
   }
 }
 
