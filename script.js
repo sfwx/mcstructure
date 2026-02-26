@@ -34,7 +34,6 @@ fwx.item.build = function () {
   }
   if (!document.getElementById("fwxDisplayName").value.trim() && !document.getElementById("fwxLore").value.trim()) {
     delete item.Item.value.tag.value.display;
-    fwx.log("warn", "\"Display\" removido por estar indefinido.");
   }
   try {
     if (!document.getElementById("fwxEnch").value.trim()) {
