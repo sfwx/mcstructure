@@ -14,7 +14,7 @@ fwx.item.build = function () {
   fwx.log("info", "Clonando estrutura JSON do item..");
   this.json = structuredClone(this.template);
   const item = this.json.value.structure.value.entities.value.value[0];
-  fwx.log("info", "Gerando nova estrutura JSON com valores atualizados..");
+  fwx.log("info", "Gerando nova estrutura JSON atualizada..");
   item.Item.value.Count.value = Math.min(Math.max(Number(document.getElementById("fwxCount").value), 1), 64);
   item.Item.value.Damage.value = Math.max(Number(document.getElementById("fwxDamage").value), 0);
   item.Item.value.Name.value = document.getElementById("fwxItemId").value || "minecraft:diamond";
