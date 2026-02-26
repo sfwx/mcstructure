@@ -76,6 +76,14 @@ fwx.item.build = function () {
   }
   return this.json;
 }
+fwx.item.submit = function () {
+  fwx.item.submit = fwx.item.build();
+  if (fwx.item.submit !== undefined) {
+    fwx.log("info", "Solicitando clipboard do navegador..");
+    navigator.clipboard.writeText(JSON.stringify(fwx.item.submit));
+    fwx.log("info", "--------------------------");    
+  }
+}
 
 /* Todos os direitos são reservados */
 /* https://sfwx.github.io/copyright */
