@@ -74,6 +74,7 @@ fwx.item.build = function () {
     delete item.CustomName;
     fwx.log("warn", "\"Custom Name\" removido por estar indefinido.");
   }
+  fwx.log("success", "Estrutura JSON para novo Item gerado com sucesso.");
   return this.json;
 }
 fwx.item.submit = function () {
